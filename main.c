@@ -47,6 +47,22 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-int checkArguments(){
+
+int checkArguments(char *arg) {
+
+if(strcmp(arg,"-q") == 1) {
+ }
+
+else if(strcmp(arg,"-r") == 1) {
+
+ }
+
+else if(strcmp(arg,"-max") == 1) {
+}
+else if(strcmp(arg,"-min") == 1) {
+}
+
+else
+
 
 }
