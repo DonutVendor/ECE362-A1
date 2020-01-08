@@ -5,4 +5,4 @@ main.o: main.c
 arrays.o: arrays.c arrays.h
 	gcc -c arrays.c
 clean:
-	rm  main.o Mqg.exe
+	rm  main.o Mqg.exe arrays.o
