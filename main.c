@@ -14,6 +14,7 @@ Assignment: 1 - Arguments/MQG
 
 #include <stdio.h>
 #include <string.h>
+#include "arrays.h"
 
 // Default values
 int numOfQueues = 1;
@@ -39,14 +40,20 @@ int main(int argc, char const *argv[]) {
 
   }else{
     //Prompt the user for additional input
+<<<<<<< HEAD
+=======
     printf("Please enter your arguments: \n");
     //char userInput = scanf("%s");
     //printf("your arguments %s", userInput);
   }
+>>>>>>> 58f0f4d1ddbb4ccd0c8f7bf67aa1d78cb35d95e6
 
-  return 0;
-}
+    ptrIntArray test = createQueue(5, 0, 20);
+    for(int i = 0; i < 5; i++){
+      printf("%d-", test->values[i]);
+    }
 
+<<<<<<< HEAD
 
 int checkArguments(char *arg) {
 
@@ -64,5 +71,9 @@ else if(strcmp(arg,"-min") == 1) {
 
 else
 
+=======
+  }
+>>>>>>> d9d6b50169182a8b594f4cfb5f50d90e03d8c9df
 
+  return 0;
 }
