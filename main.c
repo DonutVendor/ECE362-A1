@@ -7,6 +7,10 @@ Class: ECE 362
 Assignment: 1 - Arguments/MQG
 */
 
+// TO DO:
+//	We need to do a check for arguments entered more than once
+//	Switch case or if elif statement for the arguments
+//	NOT ALL IN MAIN
 
 #include <stdio.h>
 #include <string.h>
@@ -15,7 +19,6 @@ int numOfQueues = 0;
 int numOfRequests = 0;
 int minInt = 0;
 int maxInt = 0;
-
 
 // Main method that will run and do shit
 int main(int argc, char const *argv[]) {
@@ -35,6 +38,9 @@ int main(int argc, char const *argv[]) {
 
   }else{
     //Prompt the user for additional input
+    printf("Please enter your arguments: \n");
+    //char userInput = scanf("%s");
+    //printf("your arguments %s", userInput);
   }
 
   return 0;
