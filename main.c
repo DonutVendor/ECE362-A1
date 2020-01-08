@@ -10,6 +10,7 @@ Assignment: 1 - Arguments/MQG
 
 #include <stdio.h>
 #include <string.h>
+#include "arrays.h"
 
 int numOfQueues = 0;
 int numOfRequests = 0;
@@ -35,11 +36,13 @@ int main(int argc, char const *argv[]) {
 
   }else{
     //Prompt the user for additional input
+
+    ptrIntArray test = createQueue(5, 0, 20);
+    for(int i = 0; i < 5; i++){
+      printf("%d-", test->values[i]);
+    }
+
   }
 
   return 0;
-}
-
-int checkArguments(){
-
 }
