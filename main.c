@@ -15,10 +15,11 @@ Assignment: 1 - Arguments/MQG
 #include <stdio.h>
 #include <string.h>
 
-int numOfQueues = 0;
-int numOfRequests = 0;
+// Default values
+int numOfQueues = 1;
+int numOfRequests = 5;
 int minInt = 0;
-int maxInt = 0;
+int maxInt = 20;
 
 // Main method that will run and do shit
 int main(int argc, char const *argv[]) {
