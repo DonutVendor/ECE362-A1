@@ -17,6 +17,7 @@ Assignment: 1 - Arguments/MQG
 #include "arrays.h"
 
 #define REQUEST_STEP 2 //Value to divide the remaining requests by
+#define INFINITY 999999999
 
 // Default values
 int numOfQueues = 1;
@@ -25,6 +26,7 @@ int minInt = 0;
 int maxInt = 20;
 
 void printQueue(ptrIntArray queue);
+ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt);
 
 // Main method that will run and do shit
 int main(int argc, char const *argv[]) {
@@ -36,27 +38,43 @@ int main(int argc, char const *argv[]) {
     //If we find one of these values, the numeric value in the next argument goes with it
 
     //numOfRequests needs to be randomly divided among all the numOfQueues
-    ptrIntArray* arrays = (ptrIntArray*)malloc(numOfQueues * sizeof(intArray_t)); //Holds a list of the arrays
-    int remainingRequests = numOfRequests;
-    for(int x = 0; x < numOfQueues; x++){
-      if(x != numOfQueues - 1){
-        int temp = getRand(0, (remainingRequests / REQUEST_STEP));
-        remainingRequests -= temp;
-        arrays[x] = createQueue(temp, minInt, maxInt);
-      }else{
-        arrays[x] = createQueue(remainingRequests, minInt, maxInt);
-      }
-    }
+    ptrIntArray* arrays = createQueues(numOfQueues, numOfRequests, minInt, maxInt); //Holds a list of the arrays
 
+    int lowestSum = INFINITY;
+    int indexOfLowestSum = -1;
     for(int y = 0; y < numOfQueues; y++){
       printf("Queue #%d sum: %d\n", y + 1, arrays[y]->sum);
-      printQueue(arrays[y]);
+      if(arrays[y]->sum < lowestSum){
+        lowestSum = arrays[y]->sum;
+        indexOfLowestSum = y;
+      }
     }
+    printf("\nValues in the lowest-sum queue:\n");
+    printQueue(arrays[indexOfLowestSum]);
+}
+
+ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt){
+  ptrIntArray* arrays = (ptrIntArray*)malloc(numOfQueues * sizeof(intArray_t));
+  int remainingRequests = numRequests;
+  for(int x = 0; x < numOfQueues; x++){
+    if(x != numOfQueues - 1){
+      int temp = getRand(0, (remainingRequests / REQUEST_STEP));
+      remainingRequests -= temp;
+      arrays[x] = createQueue(temp, minInt, maxInt);
+    }else{
+      arrays[x] = createQueue(remainingRequests, minInt, maxInt);
+    }
+  }
+  return arrays;
 }
 
 void printQueue(ptrIntArray queue){
   for(int y = 0; y < queue->size; y++){
-    printf("%d, ", queue->values[y]);
+    if(y != queue->size - 1){
+      printf("%d, ", queue->values[y]);
+    }else{
+      printf("%d", queue->values[y]);
+    }
   }
 }
 
