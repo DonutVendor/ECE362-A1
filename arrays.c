@@ -19,8 +19,18 @@ ptrIntArray createQueue(int size, int min, int max){
     toReturn->values[i] = getRand(min, max);
   }
 
+  toReturn->sum = sumQueue(toReturn);
+
   return toReturn;
 
+}
+
+int sumQueue(ptrIntArray queue){
+  int toReturn = 0;
+  for (int i = 0; i < queue->size; i++) {
+    toReturn += queue->values[i];
+  }
+  return toReturn;
 }
 
 //Returns a random value between min and max

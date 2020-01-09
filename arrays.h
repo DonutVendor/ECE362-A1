@@ -5,6 +5,7 @@
 
 typedef struct intArray{
   int size;
+  int sum;
   int* values;
 }intArray_t, *ptrIntArray;
 
