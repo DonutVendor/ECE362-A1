@@ -28,7 +28,6 @@ int maxInt = 20;
 void printQueue(ptrIntArray queue);
 ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt);
 
-// Main method that will run and do shit
 int main(int argc, char const *argv[]) {
 
     //Use the in line cmd prompts
