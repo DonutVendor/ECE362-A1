@@ -13,6 +13,7 @@ Assignment: 1 - Arguments/MQG
 //	NOT ALL IN MAIN
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "arrays.h"
 
@@ -29,6 +30,16 @@ void printQueue(ptrIntArray queue);
 ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt);
 
 int main(int argc, char const *argv[]) {
+
+    printf("\ncmdline args count=%d",argc);
+
+    // First arg is executable name 
+    printf("\nexe name=%s", argv[0]);
+
+    for (int i=1; i < argc; i++){
+	    printf("\narg%d=%s",i,argv[i]);
+    }
+    printf("\n");
 
     //Use the in line cmd prompts
 
@@ -50,6 +61,8 @@ int main(int argc, char const *argv[]) {
     }
     printf("\nValues in the lowest-sum queue:\n");
     printQueue(arrays[indexOfLowestSum]);
+
+    return 0;
 }
 
 ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt){
@@ -76,8 +89,8 @@ void printQueue(ptrIntArray queue){
     }
   }
 }
-
-int checkArguments(char *arg) {
+/*
+void checkArguments(char *arg[]) {
 
   if(strcmp(arg,"-q") == 1) {
 
@@ -91,5 +104,6 @@ int checkArguments(char *arg) {
   else{
   }
 
-  return 0;
+  return;
 }
+*/
