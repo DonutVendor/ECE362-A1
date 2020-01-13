@@ -40,23 +40,23 @@ int main(int argc, char const *argv[]) {
     for (int i=1; i < argc; i++){
 	    printf("\narg%d=%s",i,argv[i]);
 	    if(strcmp(argv[i], "-min") == 0){
-	    	minInt = (int)argv[i+1]; 
+	    	minInt = atoi(argv[i+1]); 
 	    	printf("\nminInt=%d\n",minInt);
 	    }
 	    else if(strcmp(argv[i],"-max") == 0){
-	    	maxInt = (int)argv[i+1];
+	    	maxInt = atoi(argv[i+1]);
 		printf("maxInt=%d\n",maxInt);
 	    } 
 	    else if(strcmp(argv[i],"-r") == 0) {
-	    	numOfRequests = (int)argv[i+1];
+	    	numOfRequests = atoi(argv[i+1]);
 		printf("numOfRequests=%d\n",numOfRequests);
 	    }
 	    else if(strcmp(argv[i],"-q") == 0) {
-	    	numOfQueues = (int)argv[i+1];
+	    	numOfQueues = atoi(argv[i+1]);
 		printf("numOfQueues=%d",numOfQueues);
 	    }
 	    else {
-	    	printf("This argument does not match for this program: %s\n",argv[i]);
+	    	printf("\n");
 	    }
     }
     printf("\n");
