@@ -53,7 +53,7 @@ int main(int argc, char const *argv[]) {
 	    }
 	    else if(strcmp(argv[i],"-q") == 0) {
 	    	numOfQueues = atoi(argv[i+1]);
-		printf("numOfQueues=%d",numOfQueues);
+		printf("numOfQueues=%d\n",numOfQueues);
 	    }
 	    else {
 	    	printf("\n");
