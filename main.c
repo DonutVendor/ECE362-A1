@@ -109,22 +109,3 @@ void printQueue(ptrIntArray queue){
     }
   }
 }
-/*
-void checkArguments(char *arg[]) {
-
-  if(strcmp(arg,"-q") == 1) {
-
-  }
-  else if(strcmp(arg,"-r") == 1) {
-  }
-  else if(strcmp(arg,"-max") == 1) {
-  	maxInt = arg[];
-  }
-  else if(strcmp(arg,"-min") == 1) {
-  }
-  else{
-  }
-
-  return;
-}
-*/
