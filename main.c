@@ -43,9 +43,21 @@ int main(int argc, char const *argv[]) {
 	    	minInt = (int)argv[i+1]; 
 	    	printf("\nminInt=%d\n",minInt);
 	    }
-	    else {
-	    	printf("else\n");
+	    else if(strcmp(argv[i],"-max") == 0){
+	    	maxInt = (int)argv[i+1];
+		printf("maxInt=%d\n",maxInt);
 	    } 
+	    else if(strcmp(argv[i],"-r") == 0) {
+	    	numOfRequests = (int)argv[i+1];
+		printf("numOfRequests=%d\n",numOfRequests);
+	    }
+	    else if(strcmp(argv[i],"-q") == 0) {
+	    	numOfQueues = (int)argv[i+1];
+		printf("numOfQueues=%d",numOfQueues);
+	    }
+	    else {
+	    	printf("This argument does not match for this program: %s\n",argv[i]);
+	    }
     }
     printf("\n");
 
