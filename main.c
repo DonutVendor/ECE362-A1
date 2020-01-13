@@ -15,6 +15,7 @@ Assignment: 1 - Arguments/MQG
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "arrays.h"
 
 #define REQUEST_STEP 2 //Value to divide the remaining requests by
@@ -38,6 +39,13 @@ int main(int argc, char const *argv[]) {
 
     for (int i=1; i < argc; i++){
 	    printf("\narg%d=%s",i,argv[i]);
+	    if(strcmp(argv[i], "-min") == 0){
+	    	minInt = (int)argv[i+1]; 
+	    	printf("\nminInt=%d\n",minInt);
+	    }
+	    else {
+	    	printf("else\n");
+	    } 
     }
     printf("\n");
 
@@ -98,6 +106,7 @@ void checkArguments(char *arg[]) {
   else if(strcmp(arg,"-r") == 1) {
   }
   else if(strcmp(arg,"-max") == 1) {
+  	maxInt = arg[];
   }
   else if(strcmp(arg,"-min") == 1) {
   }
