@@ -18,7 +18,7 @@ Assignment: 1 - Arguments/MQG
 #include <stdbool.h>
 #include "arrays.h"
 
-#define REQUEST_STEP 2 //Value to divide the remaining requests by
+#define REQUEST_STEP 1 //Value to divide the remaining requests by
 #define INFINITY 999999999
 
 // Default values
@@ -32,28 +32,28 @@ ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxI
 
 int main(int argc, char const *argv[]) {
 
-    printf("\ncmdline args count=%d",argc);
+    //printf("\ncmdline args count=%d",argc);
 
-    // First arg is executable name 
-    printf("\nexe name=%s", argv[0]);
+    // First arg is executable name
+    //printf("\nexe name=%s", argv[0]);
 
     for (int i=1; i < argc; i++){
-	    printf("\narg%d=%s",i,argv[i]);
+	    //printf("\narg%d=%s",i,argv[i]);
 	    if(strcmp(argv[i], "-min") == 0){
-	    	minInt = atoi(argv[i+1]); 
-	    	printf("\nminInt=%d\n",minInt);
+	    	minInt = atoi(argv[i+1]);
+	    	//printf("\nminInt=%d\n",minInt);
 	    }
 	    else if(strcmp(argv[i],"-max") == 0){
 	    	maxInt = atoi(argv[i+1]);
-		printf("maxInt=%d\n",maxInt);
-	    } 
+		    //printf("maxInt=%d\n",maxInt);
+	    }
 	    else if(strcmp(argv[i],"-r") == 0) {
 	    	numOfRequests = atoi(argv[i+1]);
-		printf("numOfRequests=%d\n",numOfRequests);
+		    //printf("numOfRequests=%d\n",numOfRequests);
 	    }
 	    else if(strcmp(argv[i],"-q") == 0) {
 	    	numOfQueues = atoi(argv[i+1]);
-		printf("numOfQueues=%d\n",numOfQueues);
+		    //printf("numOfQueues=%d\n",numOfQueues);
 	    }
 	    else {
 	    	printf("\n");
