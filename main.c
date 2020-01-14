@@ -85,6 +85,8 @@ int main(int argc, char const *argv[]) {
     return 0;
 }
 
+//This function creates a list of Queues and handles populating them
+//Returns a pointer to the base of the list
 ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt){
   ptrIntArray* arrays = (ptrIntArray*)malloc(numOfQueues * sizeof(intArray_t));
   int remainingRequests = numRequests;

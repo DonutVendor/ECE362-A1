@@ -3,7 +3,7 @@
 
 //Creates a list that is randomly populated with 'size' elements
 //These random values are set to be between 'min' and 'max'
-//Returns a pointer to the array
+//Returns a pointer to the structure
 ptrIntArray createQueue(int size, int min, int max){
 
   ptrIntArray toReturn = (ptrIntArray)malloc(sizeof(intArray_t));
@@ -25,6 +25,8 @@ ptrIntArray createQueue(int size, int min, int max){
 
 }
 
+//Takes a Queue as an input, and sums the values stored in the array
+//Returns the summed value
 int sumQueue(ptrIntArray queue){
   int toReturn = 0;
   for (int i = 0; i < queue->size; i++) {
