@@ -7,10 +7,6 @@ Class: ECE 362
 Assignment: 1 - Arguments/MQG
 */
 
-// TO DO:
-//	We need to do a check for arguments entered more than once
-//	Switch case or if elif statement for the arguments
-//	NOT ALL IN MAIN
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,9 +23,11 @@ int numOfRequests = 5;
 int minInt = 0;
 int maxInt = 20;
 
+// Function Headers 
 void printQueue(ptrIntArray queue);
 ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxInt);
 
+// Main method that parses the command line arguments set by the user
 int main(int argc, char const *argv[]) {
 
     //printf("\ncmdline args count=%d",argc);
@@ -61,17 +59,14 @@ int main(int argc, char const *argv[]) {
     }
     printf("\n");
 
-    //Use the in line cmd prompts
-
-    //We want to start looping through all of the arguments, scanning for '-''s
-    //From there, we want to check if the value after the - is a q, r, min or max
-    //If we find one of these values, the numeric value in the next argument goes with it
 
     //numOfRequests needs to be randomly divided among all the numOfQueues
     ptrIntArray* arrays = createQueues(numOfQueues, numOfRequests, minInt, maxInt); //Holds a list of the arrays
 
     int lowestSum = INFINITY;
     int indexOfLowestSum = -1;
+
+    // Loop for going through -q and seeing which queue has the lowest sum    
     for(int y = 0; y < numOfQueues; y++){
       printf("Queue #%d sum: %d\n", y + 1, arrays[y]->sum);
       if(arrays[y]->sum < lowestSum){
@@ -102,6 +97,7 @@ ptrIntArray* createQueues(int numOfQueues, int numRequests, int minInt, int maxI
   return arrays;
 }
 
+// printQueue will go through and print the queue that is passed into the function
 void printQueue(ptrIntArray queue){
   for(int y = 0; y < queue->size; y++){
     if(y != queue->size - 1){

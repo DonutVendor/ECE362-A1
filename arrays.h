@@ -1,3 +1,8 @@
+/*
+// Names: Hannah Mortimer & Devon Mickels
+// Date: January 10 2020
+// Assignment: 1 - MQG
+*/
 #ifndef _ARRAYS_H_
 #define _ARRAYS_H_
 #include <stdio.h>

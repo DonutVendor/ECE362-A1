@@ -1,3 +1,10 @@
+/*
+// Name: Hannah Mortimer & Devon Mickels
+// Date: January 10 2020
+// Prof: Dr Schubert
+// Class: ECE 362 
+// Assignment: 1 - MQG
+*/
 #include "arrays.h"
 #include <time.h>
 
